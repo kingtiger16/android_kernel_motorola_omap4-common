@@ -31,7 +31,7 @@
 
 #define MAX_OVERLAYS	5
 #define MAX_MANAGERS	3
-#define MAX_DISPLAYS	4
+#define MAX_HWC_DISPLAYS	4
 
 #define DEBUG_OVERLAYS		(1 << 0)
 #define DEBUG_COMPOSITIONS	(1 << 1)
@@ -64,8 +64,8 @@ struct dsscomp_dev {
 	u32 num_mgrs;
 	struct omap_overlay_manager *mgrs[MAX_MANAGERS];
 	u32 num_displays;
-	struct omap_dss_device *displays[MAX_DISPLAYS];
-	struct notifier_block state_notifiers[MAX_DISPLAYS];
+	struct omap_dss_device *displays[MAX_HWC_DISPLAYS];
+	struct notifier_block state_notifiers[MAX_HWC_DISPLAYS];
 
 	wait_queue_head_t waitq_comp_complete;
 };
