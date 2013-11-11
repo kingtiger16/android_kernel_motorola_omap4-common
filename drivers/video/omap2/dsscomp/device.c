@@ -395,7 +395,7 @@ static void fill_cache(struct dsscomp_dev *cdev)
 		const char *name = dev_name(&dssdev->dev);
 		if (strncmp(name, "display", 7) ||
 		    strict_strtoul(name + 7, 10, &i) ||
-		    i >= MAX_DISPLAYS)
+		    i >= MAX_HWC_DISPLAYS)
 			continue;
 
 		if (cdev->num_displays <= i)
